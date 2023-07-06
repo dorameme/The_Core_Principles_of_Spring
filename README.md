@@ -37,3 +37,29 @@ AppConfig
 
 AppConfig에 설정을 구성한다는 뜻의 @Configuration 을 붙여준다.
 각 메서드에 @Bean 을 붙여준다. 이렇게 하면 스프링 컨테이너에 스프링 빈으로 등록한다.
+
+-스프링 컨테이너와 스프링 빈-
+
+스프링 컨테이너에서 스프링 빈을 찾는 가장 기본적인 조회 방법
+ac.getBean(빈이름, 타입)/ac.getBean(타입)
+
+스프링 빈 조회 - 상속 관계
+부모 타입으로 조회하면, 자식 타입도 함께 조회한다.
+
+BeanFactory
+스프링 컨테이너의 최상위 인터페이스다.
+스프링 빈을 관리하고 조회하는 역할을 담당한다.
+getBean() 을 제공한다.
+지금까지 우리가 사용했던 대부분의 기능은 BeanFactory가 제공하는 기능이다.
+ApplicationContext
+BeanFactory 기능을 모두 상속받아서 제공한다.
+빈을 관리하고 검색하는 기능을 BeanFactory가 제공해주는데, 애플리케이션을 개발할 때는 빈을 관리하고 조회하는 기능은 물론이고, 수 많은 부가기능이 필요하다
+따라서 applicationContext이용
+
+eanDefinition 이라는 추상화가 있어서 다양한 설정 형식을 지원-> 역할과 구현의 개념을 나눈것
+XML을 읽어서 BeanDefinition을 만들면 된다.
+자바 코드를 읽어서 BeanDefinition을 만들면 된다.
+스프링 컨테이너는 자바 코드인지, XML인지 몰라도 된다. 오직 BeanDefinition만 알면 된다.
+BeanDefinition 을 빈 설정 메타정보라 한다.
+@Bean , <bean> 당 각각 하나씩 메타 정보가 생성된다.
+스프링 컨테이너는 이 메타정보를 기반으로 스프링 빈을 생성한다.
