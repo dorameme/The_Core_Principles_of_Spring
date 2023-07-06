@@ -1,10 +1,14 @@
 package hello.core.member;
+import hello.core.AppConfig;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MemberServiceTest {
-    MemberService memberService=new MemberServiceImpl();
+    AnnotationConfigApplicationContext ac=new AnnotationConfigApplicationContext(AppConfig.class);
+    MemberService memberService=ac.getBean("memberService", MemberService.class);
     @Test
     void join(){
         //given
