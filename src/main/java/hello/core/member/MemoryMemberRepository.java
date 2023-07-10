@@ -1,11 +1,13 @@
 package hello.core.member;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
 @Component
+@RequiredArgsConstructor
 public class MemoryMemberRepository implements MemberRepository
 {
     private static Map<Long,Member> store =new HashMap<>();
