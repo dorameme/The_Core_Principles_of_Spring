@@ -16,19 +16,19 @@ repositories {
 }
 //lombok 설정 추가 시작
 configurations {
-compileOnly {
-	extendsFrom annotationProcessor
-}
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
 }
 //lombok 설정 추가 끝
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'junit:junit:4.13.1'
-    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+	implementation 'junit:junit:4.13.1'
+	implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 	implementation 'org.projectlombok:lombok:1.18.22'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'junit:junit:4.13.1'
-    testImplementation 'org.testng:testng:7.1.0'
+	testImplementation 'junit:junit:4.13.1'
+	testImplementation 'org.testng:testng:7.1.0'
 }
 
 tasks.named('test') {
